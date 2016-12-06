@@ -4,7 +4,7 @@ import time
 
 class lumberjackBot():
 
-	 __author__ = "EnriqueMoran"
+	__author__ = "EnriqueMoran"
 
 	def __init__(self, playX, playY, playerX, playerY):
 		self.playX = playX
