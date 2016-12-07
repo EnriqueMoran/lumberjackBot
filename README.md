@@ -23,6 +23,7 @@ _Checks if indicated pixel is the same color as branch's. If true, lumberjack mo
 ## Score record
 
 367 - 12/6/2016
+374 - 12/7/2016
 <br />
 <br />
 <br />
