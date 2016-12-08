@@ -17,7 +17,7 @@ _Recognises this area as start/restart button._
 ![alt tag](http://i.imgur.com/hKTuuio.png)
 
 
-_Checks if indicated pixel is the same color as branch's. If true, lumberjack moves left, else right._
+_Checks if indicated pixel is the same color as branch's. If true, lumberjack moves right, else left._
 
 
 ## Score record
