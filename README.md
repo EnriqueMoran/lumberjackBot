@@ -22,16 +22,19 @@ _Checks if indicated pixel is the same color as branch's. If true, lumberjack mo
 
 ## Score record
 
-| Speed (sec)  | Score (avg) |
-| ------------ | ----------- |
-| 0.15         | 182         |
-| 0.12         | 186         |
-| 0.11         | 129         |
-| 0.1          | 29          |
-| 0.099        | 128         |
-| 0.08         | 18          |
-| 0.07         | 7           |
+| Speed (sec)  | Score (avg) V1.1 |Score (avg) V1.2|
+| ------------ | -----------      |-----------     |
+| 0.15         | 182              |254             |
+| 0.12         | 186              |247             |
+| 0.11         | 129              |314             |
+| 0.1          | 29               |296             |
+| 0.099        | 128              |334             |
+| 0.08         | 18               |354             |
+| 0.075        | -                |87              |
+| 0.07         | 7                |93              |
 <br />
+
+![alt tag](http://i.imgur.com/hH5dY26.png)
 <br />
 <br />
 <br />
