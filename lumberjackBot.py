@@ -22,12 +22,11 @@ class lumberjackBot():
 
 
     def move(self, direction):
+        speed = 0.027
         if direction == "left":
-            pyautogui.typewrite(['left'])
-            pyautogui.typewrite(['left'])
+            pyautogui.typewrite(['left', 'left'], speed)
         elif direction == "right":
-            pyautogui.typewrite(['right'])
-            pyautogui.typewrite(['right'])
+            pyautogui.typewrite(['right', 'right'], speed)
 
     def get_color(self, rgb):
         r = rgb & 0xff
@@ -46,10 +45,11 @@ class lumberjackBot():
     def play(self):
         self.move("right")
         while True:
-            if self.pixelL == (161, 116, 56): # or self.pixelL == (153, 110, 54):
+            if self.pixelL == (161, 116, 56):
                 self.move("right")
-            elif self.pixelR == (161, 116, 56): # or self.pixelR == (153, 110, 54):
+            elif self.pixelR == (161, 116, 56): 
                 self.move("left")
+
 
     def pixelThreadL(self):
         while True:
