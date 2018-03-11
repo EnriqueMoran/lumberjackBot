@@ -18,11 +18,11 @@ class lumberjackBot():
         self.pixelR = (0,0,0)   # Right side branch color
         self.lX = treeX - 30    # Left side branch X location
         self.rX = treeX + 30    # Right side branch X location
-        self.y = treeY - 130    # Both side branch Y location
+        self.y = treeY - 132    # Both side branch Y location
 
 
     def move(self, direction):
-        speed = 0.027
+        speed = 0.2
         if direction == "left":
             pyautogui.typewrite(['left', 'left'], speed)
         elif direction == "right":
@@ -61,11 +61,13 @@ class lumberjackBot():
 
 
 if __name__ == "__main__":
+    print("Running in 5 seconds, minimize this windows.")
+    time.sleep(5)
     playX, playY = pyautogui.locateCenterOnScreen('playButton.png')
     pyautogui.moveTo(playX, playY)
     pyautogui.click()   # Start the game by pressing play button
     time.sleep(0.5)     # Wait for screen refresh
-    treeX, treeY = pyautogui.locateCenterOnScreen('tree.png') # Recognize tree position
+    treeX, treeY = playX - 6, playY - 177 # Tree position
     time.sleep(0.3)
     print("Im playing... To stop me click on IDLE and press CTRL+F6.")
     lumberjack = lumberjackBot(playX, playY, treeX, treeY)
