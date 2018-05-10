@@ -1,5 +1,5 @@
 # LumberJack Telegram Bot
-Bot made for LumberJack telegram game. It recognises a couple of key pixels on your screen and makes lumberjack dodge tree's branches. **pyautogui library is needed!**
+Bot made for LumberJack telegram game. It recognises a couple of key pixels on your screen and makes lumberjack dodge tree's branches. **pyautogui and Pillow libraries is needed!**
 
 
 ## How it works
