@@ -8,19 +8,19 @@ class lumberjackBot():
 
     __author__ = "EnriqueMoran"
 
-    def __init__(self, playX, playY, treeX, treeY):
+    def __init__(self, playX, playY, treeX, treeY, x, y):
         self.playX = playX
         self.playY = playY
         self.treeX = treeX
         self.treeY = treeY
         # Those attributes has been placed here in order to save calcs: 
-        self.x = treeX - 22   # Left side branch X location
-        self.y = treeY - 244    # Left side branch Y location
+        self.x = x    # Left side branch X location
+        self.y = y + 5   # Left side branch Y location
         self.movement_buffer = ["right"]    # First movement
 
 
     def move(self):
-        speed = 0.17
+        speed = 0.14
         if self.movement_buffer[0] == "left" and len(self.movement_buffer) == 2:
             pyautogui.typewrite(['left', 'left'], speed)
         elif self.movement_buffer[0]  == "right" and len(self.movement_buffer) == 2:
@@ -39,15 +39,16 @@ class lumberjackBot():
         return self.get_color(rgb)
 
     def play(self):
-        pyautogui.moveTo(self.x, self.y)
         while True:
             pixel_color = self.get_pixel(self.x, self.y)
             if pixel_color == (161, 116, 56):
                 self.movement_buffer.append("right")
-            else:
+                self.move()
+            elif pixel_color == (211, 247, 255) or pixel_color == (241, 252, 255):
                 self.movement_buffer.append("left")
+                self.move()
             #print(pixel_color, self.x, self.y, self.movement_buffer)
-            self.move()
+            
 
 
 if __name__ == "__main__":
@@ -57,8 +58,10 @@ if __name__ == "__main__":
     pyautogui.moveTo(playX, playY)
     pyautogui.click()   # Start the game by pressing play button
     time.sleep(0.5)     # Wait for screen refresh
+    x, y = pyautogui.locateCenterOnScreen('branch.png')
+    pyautogui.moveTo(x, y + 5)
     treeX, treeY = playX - 6, playY - 177 # Tree position
     time.sleep(0.3)
     print("Im playing... To stop me click on IDLE and press CTRL+F6.")
-    lumberjack = lumberjackBot(playX, playY, treeX, treeY)
+    lumberjack = lumberjackBot(playX, playY, treeX, treeY, x, y)
     lumberjack.play()   # Game start
